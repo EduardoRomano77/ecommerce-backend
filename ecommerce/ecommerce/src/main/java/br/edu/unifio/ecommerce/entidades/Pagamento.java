@@ -11,23 +11,20 @@ import jakarta.persistence.OneToOne;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity
 @Getter
 @Setter
+@Entity
 public class Pagamento {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-
     private BigDecimal valor;
-
     private LocalDateTime data;
-
     private String status;
-
     private String tipo;
 
     @OneToOne
     private Pedido pedido;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 }
